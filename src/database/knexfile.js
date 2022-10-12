@@ -5,7 +5,7 @@ require("dotenv").config();
  */
 module.exports = {
   development: {
-    client: "postgres",
+    client: "mysql",
     version: "5.7",
     connection: {
       host: process.env.HOST,
@@ -19,27 +19,25 @@ module.exports = {
     },
   },
   production: {
-    // client: "mysql",
-    client: "postgresql",
+    client: "mysql",
     version: "5.7",
     connection: {
-      host: process.env.dbHost,
-      user: process.env.dbUser,
-      password: process.env.dbPass,
-      database: process.env.dbName,
-      port: process.env.dbPort,
+      host: process.env.HOST,
+      user: process.env.USER,
+      password: process.env.PASSWORD,
+      database: process.env.DATABASE_NAME,
+      port: process.env.DB_PORT
     },
   },
   testing: {
-    // client: "mysql",
-    client: "postgresql",
+    client: "mysql",
     version: "5.7",
     connection: {
-      host: process.env.dbHost,
-      user: process.env.dbUser,
-      password: process.env.dbPass,
-      database: process.env.dbName,
-      port: process.env.dbPort,
+      host: process.env.HOST,
+      user: process.env.USER,
+      password: process.env.PASSWORD,
+      database: process.env.DATABASE_NAME,
+      port: process.env.DB_PORT,
     },
   },
 };
