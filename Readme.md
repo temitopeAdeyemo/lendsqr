@@ -23,6 +23,8 @@ Users get account on registration and their phone number (Unique for all users) 
 ```bash
 yarn install
 yarn start:dev
+npx knex migrate:make init --migrations-directory src/database/migrations
+npx knex migrate:latest --knexfile src/database/knex.js
 ```
 
 ### User Authentication API Reference
