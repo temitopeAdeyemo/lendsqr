@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "This is the back-end API for Inventory Tracker. It's purpose is to  keep track of items in inventory and also monitor when those items are entered into inventory, when they have been shipped to the warehouse and when the items are no longer available..",
   "scripts": {
-    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "node src/shared/server.js",
     "start:dev": "nodemon --exec babel-node src/shared/server.js",
     "migration:generate": "npx knex migrate:make init --migrations-directory src/database/migrations",
