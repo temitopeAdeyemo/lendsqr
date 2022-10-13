@@ -1,7 +1,7 @@
 import AppError from "../../../shared/utils/appError";
 import accountRepository from "../repositories/accountRepositories";
 
-class withdrawFundService {
+class FundService {
   async execute({ userId, accountId, amount }) {
     
     const userAccount = await accountRepository.getUserAccount(userId);
@@ -17,4 +17,4 @@ class withdrawFundService {
   }
 }
 
-export default new withdrawFundService();
+export default new FundService();
