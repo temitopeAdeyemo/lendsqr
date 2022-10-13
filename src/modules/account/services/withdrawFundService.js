@@ -13,7 +13,7 @@ class WithdrawFundService {
       throw new AppError("Insufficient funds", 400);
     }
     
-    const newBalance = accountBalance[0].balance - amount;
+    const newBalance = parseInt(accountBalance[0].balance) - parseInt(amount);
     await accountRepository.updateAccountBalance(accountId, newBalance);
 
     return { amount, balance: newBalance };
