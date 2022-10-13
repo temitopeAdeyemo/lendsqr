@@ -5,12 +5,11 @@ class WithdrawFundService {
   async execute({ userId, accountId, amount }) {
     console.log(userId)
     const accountBalance = await accountRepository.getAccountBalance(accountId);
-    console.log(accountBalance);
     if (!accountBalance.length) {
       throw new AppError("Account not found", 404);
     }
 
-    if (amount > accountBalance[0].balance) {
+    if (parseInt(amount) > parseInt(accountBalance[0].balance)) {
       throw new AppError("Insufficient funds", 400);
     }
     
